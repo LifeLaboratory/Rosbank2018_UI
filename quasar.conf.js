@@ -4,7 +4,7 @@ module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
-      'axios'
+      'axios',
     ],
     css: [
       'app.styl'
@@ -29,8 +29,11 @@ module.exports = function (ctx) {
     },
     devServer: {
       // https: true,
-      // port: 8080,
-      open: true // opens browser window automatically
+      port: 8080,
+      open: true,
+        
+  }},
+        // opens browser window automatically
     },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
@@ -40,6 +43,13 @@ module.exports = function (ctx) {
         'QLayoutDrawer',
         'QPageContainer',
         'QPage',
+        'QRadio',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
+        'QTableColumns',
+        'QInput',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',

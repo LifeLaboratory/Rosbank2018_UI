@@ -1,29 +1,31 @@
 <template>
-  <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
-    
-  </q-page>
+  <div class="container">
+    <line-chart
+      v-if="loaded"
+      :chartdata="chartdata"
+      :options="options"/>
+  </div>
 </template>
 
-<style>
-</style>
-
 <script>
-//import Chart from '../components/Chart'
+import LineChart from '../components/Chart.vue'
+
 export default {
-  name: 'PageIndex',
-  //components:{ Chart },
-  data: {
-    labels:['A', 'B', 'C'],
-    datasets:[{
-      label: ['One', 'Two', 'Three'],
-      backgroundColor: ['#f87979', '#3d65bd', '#3d7345'],
-      data: [10,20,30]
-      }],
-      option: {
-        height: 200
+  name: 'LineChartContainer',
+  components: { LineChart },
+  data: () => ({
+    loaded: false,
+    chartdata: null
+  }),
+  async mounted () {
+    this.loaded = false
+      try {
+        const { userlist } = await fetch('/api/userlist')
+        this.chartData = userlist
+        this.loaded = true
+      } catch (e) {
+        console.error(e)
       }
   }
-
 }
 </script>

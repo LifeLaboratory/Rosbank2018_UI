@@ -17,7 +17,7 @@ module.exports = {
   // required to lint *.vue files
   plugins: [
     'vue'
-  ],
+    ],
   globals: {
     'ga': true, // Google Analytics
     'cordova': true,
