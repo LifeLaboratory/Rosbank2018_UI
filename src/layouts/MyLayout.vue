@@ -2,6 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-layout-header>
       <q-toolbar
+      
         color="primary"
         :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
@@ -12,11 +13,12 @@
           round
           @click="leftDrawerOpen = !leftDrawerOpen"
           aria-label="Menu"
+          class="text-color"
         >
           <q-icon name="menu" />
         </q-btn>
 
-        <q-toolbar-title>
+        <q-toolbar-title class="text-color">
           Rosbank App
           <div slot="subtitle">An Application for Rosbank Tech.Madness Hack 2018</div>
         </q-toolbar-title>

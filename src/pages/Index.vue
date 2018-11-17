@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
-    <!--chart :data="data"></chart-->
+    
   </q-page>
 </template>
 
@@ -9,10 +9,10 @@
 </style>
 
 <script>
-import Chart from '../components/Chart'
+//import Chart from '../components/Chart'
 export default {
   name: 'PageIndex',
-  components:{ Chart },
+  //components:{ Chart },
   data: {
     labels:['A', 'B', 'C'],
     datasets:[{
