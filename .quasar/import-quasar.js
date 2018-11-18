@@ -11,7 +11,7 @@
 
 import Vue from 'vue'
 
-import {Quasar,QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QRadio,QInput,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,Ripple,Notify} from 'quasar'
+import {Quasar,QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QTabs,QTab,QTabPane,QRouteTab,QPage,QRadio,QTable,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QSelect,QCollapsible,QTableColumns,QInput,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide,Ripple,Notify} from 'quasar'
 
 
-Vue.use(Quasar, { config: {},components: {QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QPage,QRadio,QInput,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide},directives: {Ripple},plugins: {Notify} })
+Vue.use(Quasar, { config: {},components: {QLayout,QLayoutHeader,QLayoutDrawer,QPageContainer,QTabs,QTab,QTabPane,QRouteTab,QPage,QRadio,QTable,QCard,QCardTitle,QCardMain,QCardMedia,QCardSeparator,QCardActions,QSelect,QCollapsible,QTableColumns,QInput,QToolbar,QToolbarTitle,QBtn,QIcon,QList,QListHeader,QItem,QItemMain,QItemSide},directives: {Ripple},plugins: {Notify} })

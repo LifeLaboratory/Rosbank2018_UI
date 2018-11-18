@@ -32,9 +32,7 @@ module.exports = function (ctx) {
       port: 8080,
       open: true,
         
-  }},
-        // opens browser window automatically
-    },
+  },
     // framework: 'all' --- includes everything; for dev only!
     framework: {
       components: [
@@ -42,12 +40,22 @@ module.exports = function (ctx) {
         'QLayoutHeader',
         'QLayoutDrawer',
         'QPageContainer',
+          'QTabs',
+    'QTab',
+    'QTabPane',
+    'QRouteTab',
         'QPage',
         'QRadio',
         'QTable',
-        'QTh',
-        'QTr',
-        'QTd',
+        
+          'QCard',
+    'QCardTitle',
+    'QCardMain',
+    'QCardMedia',
+    'QCardSeparator',
+    'QCardActions',
+          'QSelect',
+       'QCollapsible',
         'QTableColumns',
         'QInput',
         'QToolbar',

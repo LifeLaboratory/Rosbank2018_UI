@@ -11,6 +11,10 @@
 
 <script>
 import router from "../router"
+import { LocalStorage, SessionStorage } from 'quasar'
+
+
+
 export default {
   data () {
     return {
@@ -18,7 +22,8 @@ export default {
         Login: '',
         Password: '',
         Page: 'employee'
-      }
+      },
+      Session: ''
     }
   },
   methods: {
@@ -29,8 +34,10 @@ export default {
               data: this.form
             })
             .then(function (response) {
-            const Session = response.data.Session;
-            console.log(Session);
+            //this.Session = response.data,
+            //console.log(response);
+            //LocalStorage.set(Session, response.data.Session)
+            //SessionStorage.set(Session, response.data.Session)
             this.router.push('/account');
               })
               .catch(function (error) {

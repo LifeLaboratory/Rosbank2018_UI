@@ -2,35 +2,75 @@
   <q-layout view="lHh Lpr lFf">
     <q-layout-header>
       <q-toolbar
-      
+        class="q-py-none"
         color="primary"
-        :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
       >
         
-
+<img alt="Rosbank" src="../img/logo.jpg" style="width:100px"/>
         <q-toolbar-title class="text-color">
-          Rosbank App
-          <div slot="subtitle">An Application for Rosbank Tech.Madness Hack 2018</div>
-        </q-toolbar-title>
+          Будущее – это вы
+         </q-toolbar-title>
+<q-tabs align="justify">
+  <q-route-tab
+  label="Главная"
+    icon="account_box"
+    to="/main_page"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Выписки"
+    icon="supervisor_account"
+    to="/users"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Платежи"
+    icon="account_balance_wallet"
+    to="/users"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Валюта"
+    icon="offline_bolt"
+    to="/main_page"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Зарплата"
+    icon="receipt"
+    to="/users"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Кредиты"
+    icon="work_outline"
+    to="/users"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Депозиты"
+    icon="visibility"
+    to="/users"
+    exact
+    slot="title"
+  />
+  <q-route-tab
+  label="Выход"
+    icon="visibility"
+    to="/main_page"
+    exact
+    slot="title"
+  />
+</q-tabs>
       </q-toolbar>
     </q-layout-header>
-
-    <q-layout-drawer
-      v-model="leftDrawerOpen"
-      :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
-    >
-      
-    <q-item link to="/">
-      <q-item-side icon="account_box" />
-      <q-item-main v-model=this.Name />
-    </q-item>
-    <q-item link to="/users">
-      <q-item-side icon="supervisor_account" />
-      <q-item-main label="Edit Users" />
-    </q-item>
-
-    </q-layout-drawer>
 
     <q-page-container>
       <router-view />
@@ -44,38 +84,31 @@ import { openURL } from 'quasar'
 export default {
   data() {
   return{
-  Name:'test',
-      currency: [
+      Name:'test',
+      Currency: [
             {
                 id_currency: 0,
                 Name_currency: 'usd',
-                Cost: 25
-            },
-            {
-                id_currency: 0,
-                Name_currency: 'usd',
-                Cost: 25
-            },
-            {
-                id_currency: 0,
-                Name_currency: 'usd',
-                Cost: 25
+                Cost: '25'
             },
             
         ],
-        Session : 'ad5faf5e-f7f6-6b5b-5c15-b988bada61cf',
+        Session : "025b96cb-0a22-4420-e180-1ea8fa2b7643",//this.$q.LocalStorage.get.item(Session),
   
       leftDrawerOpen: true,
         }
     },
   
-  mounted: function(){
-  console.log(this.Name);
-        this.$axios.get('/api/v1/quotation?Session=' + this.Session).then(function (response) {
-        this.Name = response.data.Name;
-        console.log("after: " + this.Name);});
-        
-    },
+  created() {
+    var self = this;
+    this.$axios.get('/api/v1/quotation?Session=' + this.Session)
+        .then(function (response) {
+                self.Name = response.data.Name;
+                self.Currency = response.data.Currency;
+                });
+                
+},
+  
   
   methods: {
     openURL
